@@ -8,7 +8,7 @@ const getClassName = ({ isActive }) => {
     const className = isActive ? s.active : s.link;
     return className;
 }
-export const Layout = () => {
+ const Layout = () => {
   return (
     <>
       <div className={s.div}>
@@ -30,3 +30,4 @@ export const Layout = () => {
     </>
   );
 };
+export default Layout;
