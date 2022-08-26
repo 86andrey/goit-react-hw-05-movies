@@ -1,6 +1,6 @@
 // key: bb3421bd0819dc82dbf8039d45c8f34c
 
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const API_KEY = 'bb3421bd0819dc82dbf8039d45c8f34c';
 const BASE_URL = 'https://api.themoviedb.org/3/';
