@@ -95,9 +95,9 @@ const SMain = styled.main`
   margin: auto;
   padding-top: 80px;
   padding-bottom: 10px;
-  background-color: #cecaca;
   width: 90vh;
-  min-height: 100vh;
+//   min-height: 100vh;
+  border-bottom-style: solid;
   /* display: flex; */
 `;
 
