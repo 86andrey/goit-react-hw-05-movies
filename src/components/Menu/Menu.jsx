@@ -1,4 +1,4 @@
-import s from '../Layout/layout.module.css';
+import s from '../Menu/Menu.module.css';
 import { NavLink } from 'react-router-dom';
 // import { Suspense } from 'react';
 // import styled from 'styled-components';
@@ -8,7 +8,7 @@ const getClassName = ({ isActive }) => {
     const className = isActive ? s.active : s.link;
     return className;
 }
- const Layout = () => {
+ const Menu = () => {
   return (
     <>
       <div className={s.div}>
@@ -30,4 +30,4 @@ const getClassName = ({ isActive }) => {
     </>
   );
 };
-export default Layout;
+export default Menu;
