@@ -57,7 +57,6 @@ const MovieDetails = () => {
         <SMain>
           <MovieCard>
             <Link to={'/'}>Go back...</Link>
-            <h2>Movie info</h2>
             <SContent>
               <img
                 src={'https://image.tmdb.org/t/p/w500' + poster_path}
@@ -97,18 +96,19 @@ const SMain = styled.main`
   padding-top: 80px;
   padding-bottom: 10px;
   background-color: #cecaca;
-  width: 1200px;
+  width: 90vh;
   min-height: 100vh;
   /* display: flex; */
 `;
 
 const MovieCard = styled.div`
   padding: 10px;
-  text-align: center;
+//   text-align: center;
 `;
 
 const SContent = styled.div`
   display: flex;
+  padding-top: 20px;
 `;
 const SText = styled.div`
   text-align: left;

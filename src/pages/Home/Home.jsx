@@ -11,12 +11,13 @@ const Home = () => {
     });
 
     useEffect(() => {
-        const fetchMovie = async () => {
-            setState({
-                ...state,
-                loading: true,
-            });
+        const fetchMovie = async () => {            
             try {
+                setState(prevState => ({
+                ...prevState,
+                    loading: true,
+                 error: null,
+            }));
                 const result = await fetchPopular();
                 setState(prevState => {
                     return {
@@ -25,10 +26,10 @@ const Home = () => {
                     }
                 })
             } catch (error) {
-                setState({
-                    ...state,
+                setState(prevState => ({
+                ...prevState,
                     error,
-                })
+                }))
             }
             finally {
                 setState(prevState => {
