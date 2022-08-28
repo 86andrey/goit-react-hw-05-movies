@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchPopular } from '../../components/ApiFetch/ApiFetch.js';
-import { Link } from "react-router-dom";
+import MovieList from "components/MovieList/MovieList.jsx";
 
 
 const Home = () => {
@@ -44,13 +44,11 @@ const Home = () => {
     }, [setState]);
 
     const { items, loading, error } = state;
-    const elements = items.map(({ id, title }) => <li key={id}>
-        <Link to={`/movies/${id}`}>{ title}</Link>
-    </li>)
+    
     return (
         <div className="s.container">
             <h2>Trending today</h2>
-            <ul>{elements}</ul>
+            {items.length > 0 && <MovieList items={items}/>}
             {loading && <p>...load Movie</p>}
             {error && <p>...Movie load failed</p>}
 
