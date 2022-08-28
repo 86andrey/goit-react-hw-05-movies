@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-const MovieSearchForm = () => {
+const MovieSearchForm = ({onSubmit}) => {
     const [state, setState] = useState({
         search: ""
     });
+
     const handleChange = ({ target }) => {
         const { name, value } = target;
         setState({
@@ -11,16 +12,22 @@ const MovieSearchForm = () => {
             [name]: value,
         })
     };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        onsubmit({ ...state });
+        onSubmit({ ...state });
         setState({
             search: ""
         })
     };
+    
     return (
         <form onSubmit={handleSubmit}>
-            <input name="search" type="text" value={state.search} onChange={handleChange} placeholder="Поиск" />
+            <input name="search"
+                type="text"
+                value={state.search}
+                onChange={handleChange}
+                placeholder="Поиск" required />
             <button type="submit">Искать</button>
         </form>
     )
