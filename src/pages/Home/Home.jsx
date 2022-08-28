@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchPopular } from '../../components/ApiFetch/ApiFetch.js';
 import MovieList from "components/MovieList/MovieList.jsx";
-
+import s from "../Home/Home.module.css";
 
 const Home = () => {
     const [state, setState] = useState({
@@ -46,7 +46,7 @@ const Home = () => {
     const { items, loading, error } = state;
     
     return (
-        <div className="s.container">
+        <div className={s.container}>
             <h2>Trending today</h2>
             {items.length > 0 && <MovieList items={items}/>}
             {loading && <p>...load Movie</p>}
