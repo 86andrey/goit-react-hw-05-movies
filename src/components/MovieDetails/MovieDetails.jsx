@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchById } from '../../components/ApiFetch/ApiFetch.js';
 import styled from 'styled-components';
@@ -10,7 +10,7 @@ const MovieDetails = () => {
         error: null,
     });
     const { id } = useParams();
-    console.log(id)
+    const navigate = useNavigate();
     
        useEffect(() => {
            const fetchMovie = async () => {
@@ -44,6 +44,7 @@ const MovieDetails = () => {
         };
         fetchMovie();
     }, [id, setState]);
+  const goBack = () => navigate(-1);
 
     const { original_title, overview, vote_average, poster_path, release_date } = state.item;
 //   const genresStr = genres.reduce((str, genre) => {
@@ -56,7 +57,9 @@ const MovieDetails = () => {
      
         <SMain>
           <MovieCard>
-            <Link to={'/'}>Go back...</Link>
+      <button onClick = {goBack}>Go Back</button>
+            
+
             <SContent>
               <img
                 src={'https://image.tmdb.org/t/p/w500' + poster_path}
