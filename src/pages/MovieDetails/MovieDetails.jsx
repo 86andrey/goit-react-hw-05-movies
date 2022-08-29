@@ -53,13 +53,10 @@ const MovieDetails = () => {
   const goBack = () => navigate(from);
 
   const { original_title, overview, vote_average, poster_path, release_date, genres } = state.item;
-  console.log(state.item.genres);
-  const genresStr = genres.reduce((str, genre) => {
+    
+  const genresStr = genres?.reduce((str, genre) => {
     return str + `${genre.name}, `;
   }, '');
-  console.log(genresStr);
-  // const genresStrFinal = genresStr.slice(0, genresStr.length - 2);
-  // console.log(genresStrFinal)
 
     return (
         <>
