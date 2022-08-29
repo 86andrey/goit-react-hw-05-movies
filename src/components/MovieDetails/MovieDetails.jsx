@@ -1,4 +1,4 @@
-import { useParams, useNavigate} from "react-router-dom";
+import { Link, useParams, useNavigate, Outlet, useLocation} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchById } from '../../components/ApiFetch/ApiFetch.js';
 import styled from 'styled-components';
@@ -9,9 +9,14 @@ const MovieDetails = () => {
         loading: false,
         error: null,
     });
-    const { id } = useParams();
-    const navigate = useNavigate();
-    
+  
+  const { id } = useParams();
+  
+  const navigate = useNavigate();
+  
+  const location = useLocation();
+  const from = location.state?.from || "/";
+
        useEffect(() => {
            const fetchMovie = async () => {
                try {
@@ -43,8 +48,9 @@ const MovieDetails = () => {
             }
         };
         fetchMovie();
-    }, [id, setState]);
-  const goBack = () => navigate(-1);
+       }, [id, setState]);
+  
+  const goBack = () => navigate(from);
 
     const { original_title, overview, vote_average, poster_path, release_date } = state.item;
 //   const genresStr = genres.reduce((str, genre) => {
@@ -65,6 +71,7 @@ const MovieDetails = () => {
                 src={'https://image.tmdb.org/t/p/w500' + poster_path}
                 alt={original_title}
                 width={`200px`}
+                height={`400px`}
               />
               <SText>
                             <h3>{original_title} ({release_date})</h3>
@@ -75,19 +82,19 @@ const MovieDetails = () => {
               </SText>
             </SContent>
           </MovieCard>
-          {/* <ul>
+          <ul>
             <li>
-              <Link to="cast" state={{ from }}>
+              <Link state={{from}} to={`/movies/${id}/cast`}>
                 Cast
               </Link>
             </li>
             <li>
-              <Link to="reviews" state={{ from }}>
+              <Link state={{from}} to={`/movies/${id}/reviews`}>
                 Reviews
               </Link>
             </li>
-          </ul> */}
-          {/* <Outlet /> */}
+          </ul> 
+           <Outlet />
         </SMain>
       
     </>
