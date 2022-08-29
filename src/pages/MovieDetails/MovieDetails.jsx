@@ -82,6 +82,8 @@ const MovieDetails = () => {
               </SText>
             </SContent>
           </MovieCard>
+          <MovieCard>
+          <h3>Additional information</h3>
           <ul>
             <li>
               <Link state={{from}} to={`/movies/${id}/cast`}>
@@ -93,7 +95,8 @@ const MovieDetails = () => {
                 Reviews
               </Link>
             </li>
-          </ul> 
+            </ul>
+          </MovieCard>  
            <Outlet />
         </SMain>
       
@@ -113,7 +116,7 @@ const SMain = styled.main`
 
 const MovieCard = styled.div`
   padding: 10px;
-//   text-align: center;
+border-bottom-style: solid;
 `;
 
 const SContent = styled.div`

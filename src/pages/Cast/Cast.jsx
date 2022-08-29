@@ -11,7 +11,6 @@ const Cast = () => {
         error: null,
     });
     const { id } = useParams();
-    // const navigate = useNavigate();
     
        useEffect(() => {
            const fetchMovie = async () => {
@@ -63,15 +62,19 @@ const Cast = () => {
     ));
 
     return (
-        <div>
+        <MovieCard>
       <STitle>Cast</STitle>
        <SList>
           {elements}
         </SList>
-   </div>
+   </MovieCard>
   );
 };
 
+const MovieCard = styled.div`
+  padding: 10px;
+border-bottom-style: solid;
+`;
 
 const STitle = styled.h2`
   margin: 0 0 0 30px;
