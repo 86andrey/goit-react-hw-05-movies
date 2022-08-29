@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/936.0d132d19.chunk.css","mappings":"AAAA,wBAKQ,sBAAuB,CAFvB,YAAa,CADb,aAAc,CADlB,gBAAiB,CAGb,YAER","sources":["pages/Home/Home.module.css"],"sourcesContent":[".container {\n    max-width: 1140px;\n        margin: 0 auto;\n        display: flex;\n        padding: 20px;\n        align-items: flex-start;\n}"],"names":[],"sourceRoot":""}
