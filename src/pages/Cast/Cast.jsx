@@ -2,7 +2,7 @@ import { useParams} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchCredits } from '../../components/ApiFetch/ApiFetch.js';
 import styled from 'styled-components';
-// import { Loader } from "components/Loader/Loader.jsx";
+
 
 const Cast = () => {
      const [state, setState] = useState({

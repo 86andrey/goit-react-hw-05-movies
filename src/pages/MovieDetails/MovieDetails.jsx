@@ -52,11 +52,14 @@ const MovieDetails = () => {
   
   const goBack = () => navigate(from);
 
-    const { original_title, overview, vote_average, poster_path, release_date } = state.item;
-//   const genresStr = genres.reduce((str, genre) => {
-//     return str + `${genre.name}, `;
-//   }, '');
-//   const genresStrFinal = genresStr.slice(0, genresStr.length - 2);
+  const { original_title, overview, vote_average, poster_path, release_date, genres } = state.item;
+  console.log(state.item.genres);
+  const genresStr = genres.reduce((str, genre) => {
+    return str + `${genre.name}, `;
+  }, '');
+  console.log(genresStr);
+  // const genresStrFinal = genresStr.slice(0, genresStr.length - 2);
+  // console.log(genresStrFinal)
 
     return (
         <>
@@ -74,11 +77,12 @@ const MovieDetails = () => {
                 height={`400px`}
               />
               <SText>
-                            <h3>{original_title} ({release_date})</h3>
-                            <h4>Overview</h4>
-                <p>{overview}</p>
-                <p>Reiting: {vote_average}</p>
-                {/* <p>Genres: {genresStrFinal}</p> */}
+                <h3>{original_title} ({release_date})</h3>
+                <h4>Reiting: {vote_average}</h4>
+                <h4>Overview</h4>
+                <p>{overview}</p>                
+                <h4>Genres</h4>
+                <p>{genresStr}</p>
               </SText>
             </SContent>
           </MovieCard>
